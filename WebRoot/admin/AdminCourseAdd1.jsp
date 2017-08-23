@@ -15,10 +15,10 @@
 <title>添加课程信息1</title>
 
 <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-<link rel="stylesheet" type="text/css"
-	href="css/bootstrap-responsive.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">
 <link rel="stylesheet" href="css/common.css" />
 <link rel="stylesheet" href="css/admin.css" />
+<script src="js/jquery1.12.1.js" type="text/javascript"></script>
 <script type="text/javascript">
 
 	var msg = "${requestScope.Message}";
@@ -39,9 +39,9 @@
 		var hour = document.getElementById("input-hour").value;
 		var credit = document.getElementById("input-credit").value;
 		var errorStr = "";
-		if(isNaN(hour)){
-			errorStr += "学时，";
-		}
+//		if(isNaN(hour)){
+//			errorStr += "学时，";
+//		}
 		if(isNaN(credit)){
 			errorStr += "学分，";
 		}
@@ -51,6 +51,39 @@
 			return false;
 		}
 	}
+	
+	$(function(){
+		$("#cursPropertySel").change(function(){
+			$("#cursSecProperty").empty();
+			var text = $(this).val();
+			if(text == "专业方向选修课程" || text =="专业方向综合实验、实践环节"){
+				var divString = "<div class='control-group control-group-left' id='cursSecProperty'>"+
+								"<label class='control-label'>课程方向：</label>"+
+								"<div class='controls'>"+
+								"<select name='course.cursSecProperty'>"+
+								"<option value=''>请选择专业方向</option>"+
+								"<option value='机械电子工程方向'>机械电子工程方向</option>"+
+								"<option value='机电控制及自动化方向'>机电控制及自动化方向</option>"+
+								"<option value='现代机械设计制造方向'>现代机械设计制造方向</option>"+
+								"</select></div></div>";
+				var $div = $(divString);
+				$("#cursProperty").after($div);
+			}
+			else{
+				$("#cursSecProperty").empty();
+			}
+		});
+	})
+	$(document).ready(function(){
+			$("form").submit(function(){
+				var text = $("#cursSecPropertySel").val;
+				if(text == "请选择专业方向"){
+					alert("请选择专业方向");
+					console.log("请选择专业方向");
+				}
+			});
+		})
+	
 </script>
 </head>
 
@@ -102,16 +135,19 @@
 								<input type="text" name="course.cursCredit" id="input-credit">
 							</div>
 						</div>
-						<div class="control-group control-group-left">
+						<div class="control-group control-group-left" id="cursProperty">
 							<label class="control-label">课程性质：</label>
 							<div class="controls">
-								<select name="course.cursProperty">
+								<select name="course.cursProperty"  id="cursPropertySel">
 									<option value="公共基础课">公共基础课</option>
-									<option value="学科基础课">学科基础课</option>
-									<option value="专业核心课">专业核心课</option>
-									<option value="专业选修课">专业选修课</option>
-									<option value="实习、实践类课程">实习、实践类课程</option>
-									<option value="基础素质培养课">基础素质培养课</option>
+									<option value="专业平台基础课">专业平台基础课</option>
+									<option value="专业特色课程">专业特色课程</option>
+									<option value="专业主干选修课程">专业主干选修课程</option>
+									<option value="专业通识选修课程">专业通识选修课程</option>
+									<option value="专业方向选修课程">专业方向选修课程</option>
+									<option value="综合实验、实践环节">综合实验、实践环节</option>
+									<option value="专业方向综合实验、实践环节">专业方向综合实验、实践环节</option>
+									<option value="能力素质拓展模块基础素质">能力素质拓展模块基础素质</option>
 								</select>
 							</div>
 						</div>

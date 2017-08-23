@@ -75,7 +75,8 @@ public class CourseServiceImpl implements CourseService {
 	public boolean addCursBasicInf(Course course) {
 		Course courseTemp1 = courseDao.findByNum(course.getCursNum());
 		Course courseTemp2 = courseDao.findByNameAndTerm(course.getCursName());
-		if (courseTemp1 != null || courseTemp2 != null) {
+		Course courseTemp3 = courseDao.findBySecPro(course.getCursSecProperty(), course.getCursName(), course.getCursNum());
+		if (courseTemp3 != null) {
 			throw new CourseExistsException("该课程已存在，请勿重复添加");
 		}
 

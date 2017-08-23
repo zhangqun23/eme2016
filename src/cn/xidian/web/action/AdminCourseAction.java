@@ -160,7 +160,17 @@ public class AdminCourseAction extends ActionSupport implements RequestAware,
 		departments = departmentService.selectAllDepts();
 		return "admin";
 	}
+	
+	// 删除所有课程
+	public String delAllDeptmentAndThr(){
+		boolean isSuccess = adminCourseService.deleteAllCurs();
+		if (isSuccess)
+			request.put("Message", "删除成功！");
+		else
+			request.put("Message", "对不起，删除失败！");
 
+		return "adminCourseList";
+	}
 
 
 	public Course getCourse() {

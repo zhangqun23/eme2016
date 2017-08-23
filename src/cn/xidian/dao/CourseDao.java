@@ -28,6 +28,8 @@ public interface CourseDao {
 	
 	boolean deleteByCursId(Integer cursId);
 	
+	boolean deleteAllCurs();
+	
 	Course findById(Integer cursId);
 	
 	boolean updateCursNoteById(Course course);
@@ -35,5 +37,7 @@ public interface CourseDao {
 	List<Course> selectTchChargeCursByTchrNum(String tchrNum);
 	
 	boolean updateByTchr(Course course);
+
+	Course findBySecPro(String cursSecProperty, String cursName, String cursNum);
 	
 }

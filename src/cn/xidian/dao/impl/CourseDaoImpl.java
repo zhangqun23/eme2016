@@ -36,7 +36,18 @@ public class CourseDaoImpl implements CourseDao {
 		Course course = (Course) query.uniqueResult();
 		return course;
 	}
-
+	
+	@Override
+	public Course findBySecPro(String cursSecProperty, String cursName, String cursNum) {
+		String sql = "from Course c where c.cursSecProperty=? and c.cursNum=? and c.cursName=? and isDelete=1";
+		Query query = currentSession().createQuery(sql);
+		query.setString(0, cursSecProperty);
+		query.setString(1, cursNum);
+		query.setString(2, cursName);
+		Course course = (Course) query.uniqueResult();
+		return course;
+	}
+	
 	@SuppressWarnings("unchecked")
 	@Override
 	public Set<Course> findAllCurs() {
@@ -97,6 +108,14 @@ public class CourseDaoImpl implements CourseDao {
 	public boolean deleteByCursId(Integer cursId) {
 		String hql = "update Course c set c.isDelete=0 where c.cursId=?";
 		Query query = currentSession().createQuery(hql).setInteger(0, cursId);
+		query.executeUpdate();
+		return true;
+	}
+	
+	@Override
+	public boolean deleteAllCurs() {
+		String hql = "update Course c set c.isDelete=0";
+		Query query = currentSession().createQuery(hql);
 		query.executeUpdate();
 		return true;
 	}
