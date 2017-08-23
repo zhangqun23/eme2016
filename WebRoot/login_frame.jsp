@@ -106,13 +106,13 @@
 					</div>
 					<div class="tab-pane" id="tab3">
 						<div class="div-major-inf">
-							<h5>机械设计制造及其自动化专业毕业生应修满174+22个学分。</h5>
+							<h5>机械设计制造及其自动化专业毕业生应修满150+19个学分。</h5>
 							<table class="table table-bordered">
 								<tr>
 									<td class="classify"><p>公共基础课</p>
-										<p>共69.5个学分</p>
-										<p>应修69.5个学分</p></td>
-									<td class="course"><s:iterator
+										<p>必修学分48</p>
+										<p>选修学分2</p></td>
+									<td colspan="2" class="course"><s:iterator
 											value="courses.{?#this.cursProperty=='公共基础课'}" var="c">
 											<a
 												href="Course_Detail_1_selectByCursId?cursId=<s:property value="#c.cursId"/>"><s:property
@@ -120,55 +120,130 @@
 										</s:iterator></td>
 								</tr>
 								<tr>
-									<td><p>学科基础课</p>
-										<p>共42.5个学分</p>
-										<p>应修42.5个学分</p></td>
-									<td class="course"><s:iterator
-											value="courses.{?#this.cursProperty=='学科基础课'}" var="c">
+									<td><p>专业平台基础课</p>
+										<p>必修学分32</p>
+										<p>选修学分19.5</p></td>
+									<td colspan="2" class="course"><s:iterator
+											value="courses.{?#this.cursProperty=='专业平台基础课'}" var="c">
 											<a
 												href="Course_Detail_1_selectByCursId?cursId=<s:property value="#c.cursId"/>"><s:property
 													value="#c.cursName" /></a>
 										</s:iterator></td>
 								</tr>
 								<tr>
-									<td><p>专业核心课</p>
-										<p>共16个学分</p>
-										<p>应修10个学分</p></td>
-									<td class="course"><s:iterator
-											value="courses.{?#this.cursProperty=='专业核心课'}" var="c">
+									<td><p>专业特色课程</p>
+										<p>必修学分7.5</p></td>
+									<td colspan="2" class="course"><s:iterator
+											value="courses.{?#this.cursProperty=='专业特色课程'}" var="c">
 											<a
 												href="Course_Detail_1_selectByCursId?cursId=<s:property value="#c.cursId"/>"><s:property
 													value="#c.cursName" /></a>
 										</s:iterator></td>
 								</tr>
 								<tr>
-									<td><p>专业选修课</p>
-										<p>共52个学分</p>
-										<p>应修22个学分</p></td>
-									<td class="course"><s:iterator
-											value="courses.{?#this.cursProperty=='专业选修课'}" var="c">
+									<td><p>专业主干选修课程</p>
+										<p>选修学分6.5</p></td>
+									<td colspan="2" class="course"><s:iterator
+											value="courses.{?#this.cursProperty=='专业主干选修课程'}" var="c">
 											<a
 												href="Course_Detail_1_selectByCursId?cursId=<s:property value="#c.cursId"/>"><s:property
 													value="#c.cursName" /></a>
 										</s:iterator></td>
 								</tr>
 								<tr>
-									<td><p>实习、实践类课程</p>
-										<p>共30个学分</p>
-										<p>应修30个学分</p></td>
-									<td class="course"><s:iterator
-											value="courses.{?#this.cursProperty=='实习、实践类课程'}" var="c">
+									<td><p>专业通识选修课程</p>
+										<p>选修学分3</p></td>
+									<td colspan="2" class="course"><s:iterator
+											value="courses.{?#this.cursProperty=='专业通识选修课程'}" var="c">
 											<a
 												href="Course_Detail_1_selectByCursId?cursId=<s:property value="#c.cursId"/>"><s:property
 													value="#c.cursName" /></a>
 										</s:iterator></td>
 								</tr>
 								<tr>
-									<td><p>基础素质培养课</p>
-										<p>共23个学分</p>
-										<p>应修22个学分</p></td>
+									<td rowspan="3"><p>专业方向选修课程</p>
+										<p>要求选修任一方向课程：6学分</p></td>
+									<td>
+										<p calss="coursetype">机械电子工程方向</p>
+									</td>
 									<td class="course"><s:iterator
-											value="courses.{?#this.cursProperty=='基础素质培养课'}" var="c">
+											value="courses.{?#this.cursProperty=='专业方向选修课程'}" var="c">
+											<s:if test='#c.cursSecProperty =="机械电子工程方向"'>
+											<a href="Course_Detail_1_selectByCursId?cursId=<s:property value="#c.cursId"/>"><s:property
+													value="#c.cursName" /></a></s:if>
+										</s:iterator></td>
+								</tr>
+								<tr>
+									<td><p calss="coursetype">机电控制及自动化方向</p></td>
+									<td class="course"><s:iterator
+											value="courses.{?#this.cursProperty=='专业方向选修课程'}" var="c">
+											<s:if test="#c.cursSecProperty =='机电控制及自动化方向'">
+											<a href="Course_Detail_1_selectByCursId?cursId=<s:property value="#c.cursId"/>"><s:property
+													value="#c.cursName" /></a></s:if>
+										</s:iterator></td>
+								</tr>
+								<tr>
+									<td><p calss="coursetype">现代机械设计制造方向</p></td>
+									<td class="course"><s:iterator value="courses.{?#this.cursProperty=='专业方向选修课程'}" var="c">
+									<s:if test="#c.cursSecProperty =='现代机械设计制造方向'">
+											<a href="Course_Detail_1_selectByCursId?cursId=<s:property value="#c.cursId"/>"><s:property
+													value="#c.cursName" /></a></s:if>
+										</s:iterator></td>
+								</tr>
+								<tr>
+									<td>
+										<p>综合实验、实践环节</p>
+										<p>必修学分22.5</p>
+									</td>
+									<td colspan="2" class="course"><s:iterator
+											value="courses.{?#this.cursProperty=='综合实验、实践环节'}" var="c">
+											<a
+												href="Course_Detail_1_selectByCursId?cursId=<s:property value="#c.cursId"/>"><s:property
+													value="#c.cursName" /></a>
+										</s:iterator></td>
+								</tr>
+								<tr>
+									<td rowspan="3">
+										<p>专业方向综合实验、实践环节</p>
+										<p>选修学分3</p>
+									</td>
+									<td>
+										<p calss="coursetype">机械电子工程方向</p>
+									</td>
+									<td class="course"><s:iterator
+											value="courses.{?#this.cursProperty=='专业方向综合实验、实践环节'}" var="c">
+											<s:if test="#c.cursSecProperty =='机械电子工程方向'">
+											<a
+												href="Course_Detail_1_selectByCursId?cursId=<s:property value="#c.cursId"/>"><s:property
+													value="#c.cursName" /></a></s:if>
+										</s:iterator></td>
+								</tr>
+								<tr>
+									<td><p calss="coursetype">机电控制及自动化方向</p></td>
+									<td class="course"><s:iterator
+											value="courses.{?#this.cursProperty=='专业方向综合实验、实践环节'}" var="c">
+											<s:if test="#c.cursSecProperty =='机电控制及自动化方向'">
+											<a href="Course_Detail_1_selectByCursId?cursId=<s:property value="#c.cursId"/>"><s:property
+													value="#c.cursName" /></a></s:if>
+										</s:iterator></td>
+								</tr>
+								<tr>
+									<td><p calss="coursetype">现代机械设计制造方向</p></td>
+									<td class="course"><s:iterator
+											value="courses.{?#this.cursProperty=='专业方向综合实验、实践环节'}" var="c">
+											<s:if test="#c.cursSecProperty =='现代机械设计制造方向'">
+												<a href="Course_Detail_1_selectByCursId?cursId=<s:property value="#c.cursId"/>">
+													<s:property value="#c.cursName" /></a>
+											</s:if>
+										</s:iterator></td>
+								</tr>
+								<tr>
+									<td>
+										<p>能力素质拓展模块基础素质</p>
+										<p>应修学分19</p>
+									</td>
+									<td colspan="2" class="course"><s:iterator
+											value="courses.{?#this.cursProperty=='能力素质拓展模块基础素质'}" var="c">
 											<a
 												href="Course_Detail_1_selectByCursId?cursId=<s:property value="#c.cursId"/>"><s:property
 													value="#c.cursName" /></a>
@@ -249,7 +324,7 @@
 					<div class="loginNoteDiv">
 						<p>
 							如提示“账号”或“密码”错误，请填写账号、姓名、电话、身份证号、发邮件到信息处邮箱。 <br>
-						<address>信息处邮箱：xd_jdgcxy@163.com成功了</address>
+						<address>信息处邮箱：xd_jdgcxy@163.com</address>
 					</div>
 				</div>
 			</div>

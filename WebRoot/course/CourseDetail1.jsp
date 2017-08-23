@@ -51,6 +51,11 @@
 					<div class="div-detail">
 						<label>课程性质：</label> <label><s:property value="course.cursProperty"/></label>
 					</div>
+					<s:if test="course.cursSecProperty != null">
+						<div class="div-detail">
+							<label>课程方向：</label> <label><s:property value="course.cursSecProperty"/></label>
+						</div>
+					</s:if>
 					<div class="div-detail">
 						<label>适用专业：</label> <label><s:property value="course.cursApplMajor"/></label>
 					</div>

@@ -7,8 +7,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils.Text;
-
 @Entity
 @Table(name="course")
 public class Course {
@@ -33,7 +31,7 @@ public class Course {
 	private String cursNote2;
 	private Integer isDelete;//状态，是否已经被删除
 	private String type;//课程类型，一般课程：normal，实验课程：experiment，毕业设计：graduation-project。根据不同课程类型显示不同表头
-	
+	private String cursSecProperty;//机械电子工程方向;机电控制及自动化方向;现代机械设计制造方向
 	
 	@Id
 	@GeneratedValue
@@ -176,6 +174,14 @@ public class Course {
 
 	public void setType(String type) {
 		this.type = type;
+	}
+
+	public String getCursSecProperty() {
+		return cursSecProperty;
+	}
+
+	public void setCursSecProperty(String cursSecProperty) {
+		this.cursSecProperty = cursSecProperty;
 	}
 	
 }

@@ -177,3 +177,9 @@ hr{
 	text-decoration:underline;
 	color:red;
 }
+
+.coursetype{
+	position:absolute;
+	width:60px;
+	vertical-align: middle;
+}

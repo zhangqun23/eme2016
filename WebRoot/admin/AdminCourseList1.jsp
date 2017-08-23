@@ -56,6 +56,8 @@
 				<div class="div-msg">
 					<label><s:actionerror /></label> <a class="btn top0"
 						href="AdminCourse_Add_1_selectDeptmentAndThr">新增课程信息</a>
+						<label><s:actionerror /></label> <a class="btn top0"
+						href="AdminCourse_Add_1_delAllDeptmentAndThr">删除所有课程信息</a>
 				</div>
 				<div class="div-tchr-detail" id="adminCursList">
 					<s:iterator value="courses" var="c">

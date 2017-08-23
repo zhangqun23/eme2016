@@ -12,6 +12,8 @@ public interface AdminCourseService {
 	Set<Course> selectCursLimits(AdminCursLimits limits);
 			
 	boolean deleteByCursId(Integer cursId);
+	
+	boolean deleteAllCurs();
 		
 	boolean updateCursNoteById(Course course);
 	

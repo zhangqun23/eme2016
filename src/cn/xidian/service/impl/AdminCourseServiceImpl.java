@@ -78,6 +78,12 @@ public class AdminCourseServiceImpl implements AdminCourseService {
 	}
 	
 	@Override
+	public boolean deleteAllCurs(){
+		return courseDao.deleteAllCurs();
+	}
+	
+	
+	@Override
 	public boolean updateCursNoteById(Course course) {
 		return courseDao.updateCursNoteById(course);
 	}
