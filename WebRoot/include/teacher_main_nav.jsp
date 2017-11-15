@@ -4,9 +4,10 @@
 <div class="navbar navbar-static-top">
 	<div class="navbar-inner nav-main">
 		<div class="div-brand">
-					<a class="brand">机械设计制造及其自动化</a></div>
+			<a class="brand">机械设计制造及其自动化</a>
+		</div>
 		<ul class="nav">
-	<!-- 	<li class="dropdown"><a class="brand">机械制造及其自动化</a></li> -->
+			<!-- 	<li class="dropdown"><a class="brand">机械制造及其自动化</a></li> -->
 			<li class="dropdown"><a href="#" class="dropdown-toggle"
 				data-toggle="dropdown">个人资料&nbsp;</a>
 				<ul class="dropdown-menu">
@@ -30,16 +31,18 @@
 						<li><a href="TeacherCourse_Manager_0_excute">课程评价查询</a></li>
 						<li><a href="TeacherCourse_Manager_1_selectAllPoints">专业达成评价</a></li>
 						<li><a href="TeacherCourse_Manager_2_excute">学年达成度查询</a></li>
-					<!-- 	<li><a href="TeacherStudent_Survey_List_selectAllSurveys">问卷调查设计</a></li> -->
+						<li><a href="http://ela.xidian.edu.cn/eme2016/AdminLogin.jsp">管理员登录入口</a></li>
+						<!-- 	<li><a href="TeacherStudent_Survey_List_selectAllSurveys">问卷调查设计</a></li> -->
 					</ul></li>
 			</s:if>
 			<%-- <s:if test="#session.tUser.isManager==1"> --%>
-				<li class="dropdown"><a href="#" class="dropdown-toggle"
-					data-toggle="dropdown">问卷调查&nbsp;</a>
-					<ul class="dropdown-menu">
-						<li><a href="TeacherStudent_Survey_List_selectAllSurveys">问卷设计</a></li>
-						<li><a href="TeacherStudent_Survey_List2_selectPublishedSurveys">问卷数据分析</a></li>
-					</ul></li>
+			<li class="dropdown"><a href="#" class="dropdown-toggle"
+				data-toggle="dropdown">问卷调查&nbsp;</a>
+				<ul class="dropdown-menu">
+					<li><a href="TeacherStudent_Survey_List_selectAllSurveys">问卷设计</a></li>
+					<li><a
+						href="TeacherStudent_Survey_List2_selectPublishedSurveys">问卷数据分析</a></li>
+				</ul></li>
 			<%-- </s:if> --%>
 
 
