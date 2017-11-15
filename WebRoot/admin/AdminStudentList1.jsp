@@ -69,6 +69,7 @@
 								<th>班级</th>
 								<th>电话</th>
 								<th>宿舍</th>
+								<th>邮箱</th>
 								<th class="th-opr">操作</th>
 							</tr>
 						</thead>
@@ -83,6 +84,7 @@
 									<td><s:property value="#s.clazz.claName" /></td>
 									<td><s:property value="#s.stuPhone" /></td>
 									<td><s:property value="#s.stuCommAddr" /></td>
+									<td><s:property value="#s.stuMail" /></td>
 									<td class="th-opr"><a
 										href="AdminStudent_Information_1_selectStudentBySchNum?schNum=<s:property value="#s.stuSchNum"/>">详细</a>&nbsp;&nbsp;
 										<a
