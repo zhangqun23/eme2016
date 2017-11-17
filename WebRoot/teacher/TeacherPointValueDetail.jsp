@@ -90,7 +90,7 @@
 										<th colspan="2">课堂表现</th>
 										<th colspan="2">平时作业</th>
 										<th colspan="2">实验成绩</th>
-										<th colspan="2">期中成绩</th>
+										<th colspan="2">实践成绩</th>
 										<th colspan="2">期末成绩</th>
 									</s:if>
 									<s:if test="course.type=='experiment'">

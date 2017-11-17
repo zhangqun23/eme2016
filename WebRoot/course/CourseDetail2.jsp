@@ -61,7 +61,7 @@
 								 			<th>课堂表现</th>
 											<th>平时作业</th>
 											<th>实验成绩</th>
-											<th>期中成绩</th>
+											<th>实践成绩</th>
 											<th>期末成绩</th>
 										</s:if>
 										<s:if test="course.type=='experiment'">

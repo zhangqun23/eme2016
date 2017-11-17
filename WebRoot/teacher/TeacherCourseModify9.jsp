@@ -148,7 +148,7 @@
 						</div>
 						<div class="div-per-rule">
 							<s:if test="course.type=='normal'">
-							期中成绩
+							实践成绩
 						</s:if>
 							<s:if test="course.type=='experiment'">
 							设计报告
@@ -188,7 +188,7 @@
 											<th>课堂表现</th>
 											<th>平时作业</th>
 											<th>实验成绩</th>
-											<th>期中成绩</th>
+											<th>实践成绩</th>
 											<th>期末成绩</th>
 										</s:if>
 										<s:elseif test="course.type=='experiment'">

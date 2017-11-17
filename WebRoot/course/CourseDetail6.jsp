@@ -37,7 +37,7 @@
 					<div class="div-inf-title">考核及成绩评定方式</div>
 					<div class="div-inner-text">
 						该课程各部分所占比例为：<s:if test="course.type=='normal'">
-							期中成绩
+							实践成绩
 						</s:if>
 							<s:if test="course.type=='experiment'">
 							设计报告

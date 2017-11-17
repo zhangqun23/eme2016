@@ -108,7 +108,7 @@
 								id="input-exp"/>&nbsp;%
 						</div>
 						<div class="div-per-rule">
-							期中成绩&nbsp;<input name="compositionRules.midTermPer" type="text"
+							实践成绩&nbsp;<input name="compositionRules.midTermPer" type="text"
 								id="input-mid" />&nbsp;%
 						</div>
 						<div class="div-per-rule">
@@ -128,7 +128,7 @@
 										<th>课堂表现</th>
 										<th>平时作业</th>
 										<th>实验成绩</th>
-										<th>期中成绩</th>
+										<th>实践成绩</th>
 										<th>期末成绩</th>
 									</tr>
 								</thead>

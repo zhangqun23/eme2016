@@ -13,12 +13,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">   
     <script>
     	window.onload = function() {
-    		document.getElementById("toMain").click(); 		
+    		document.getElementById("toMain2016").click(); 		
     	}
     </script> 
   </head>
   
   <body>
-  	<a id="toMain" href="Major___selectMajorInf" style="display:none">登录</a><br>
+  	<a id="toMain2016" href="Major___selectMajorInf" style="display:none">登录</a><br>
  </body>
 </html>
